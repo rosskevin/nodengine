@@ -19,7 +19,8 @@ function processExit (code) {
 
 function nodeSwitcher (nodeVersion) {
   var binaries = {
-    n: [nodeVersion]
+    n: [nodeVersion],
+    nvm: ['use', nodeVersion]
   }
 
   function swicher (binary) {
