@@ -21,6 +21,12 @@ $ npm install nodengine --global
 
 Just run `nodengine` to change to current package.json version. Just it!
 
+For automatic switching, add this snippet into `.extra`:
+
+```bash
+echo "chpwd () { nodengine }" >> ~/.extra
+```
+
 ## License
 
 MIT © [Kiko Beats](http://kikobeats.com)
