@@ -1,0 +1,51 @@
+{
+  "name": "nodengine",
+  "description": "NodeJS switcher based on package.json.",
+  "homepage": "https://github.com/Kikobeats/nodengine",
+  "version": "0.0.0",
+  "bin": {
+    "nodengine": "bin/index.js"
+  },
+  "author": {
+    "name": "Kiko Beats",
+    "email": "josefrancisco.verdu@gmail.com",
+    "url": "https://github.com/Kikobeats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikobeats/nodengine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kikobeats/nodengine/issues"
+  },
+  "keywords": [
+    "automatic",
+    "avn",
+    "n",
+    "node",
+    "switch",
+    "switcher",
+    "version"
+  ],
+  "dependencies": {
+    "each-async": "~1.1.1",
+    "node-versions": "~2.1.6",
+    "semver": "~5.1.0",
+    "update-notifier": "~0.6.2",
+    "which": "~1.2.4"
+  },
+  "devDependencies": {
+    "git-dirty": "latest",
+    "standard": "latest"
+  },
+  "engines": {
+    "node": ">= 4"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "echo 'no test'"
+  },
+  "license": "MIT"
+}
