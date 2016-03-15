@@ -29,6 +29,7 @@
   ],
   "dependencies": {
     "each-async": "~1.1.1",
+    "meow": "^3.7.0",
     "node-versions": "~2.1.6",
     "semver": "~5.1.0",
     "update-notifier": "~0.6.2",
