@@ -1,5 +1,12 @@
 # nodengine
 
+<p align="center">
+  <br>
+  <img src="http://g.recordit.co/pMGKmq4ycR.gif" alt="demo">
+  <br>
+  <br>
+</p>
+
 ![Last version](https://img.shields.io/github/tag/Kikobeats/nodengine.svg?style=flat-square)
 [![Build Status](http://img.shields.io/travis/Kikobeats/nodengine/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/nodengine)
 [![Dependency status](http://img.shields.io/david/Kikobeats/nodengine.svg?style=flat-square)](https://david-dm.org/Kikobeats/nodengine)
