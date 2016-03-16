@@ -1,8 +1,17 @@
+<a name="1.1.1"></a>
+## 1.1.1 (2016-03-16)
+
+
+* Fix condition ([d95de09](https://github.com/kikobeats/nodengine/commit/d95de09))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2016-03-16)
 
 
 * Improve algorithm ([9e217f9](https://github.com/kikobeats/nodengine/commit/9e217f9))
+* Release 1.1.0 ([ef68520](https://github.com/kikobeats/nodengine/commit/ef68520))
 
 
 
