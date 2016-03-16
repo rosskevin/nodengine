@@ -21,7 +21,7 @@ It needs a global version manager as [n](https://www.npmjs.com/package/n) or [nv
 ## Install
 
 ```bash
-$ npm install nodengine --global
+$ npm install nodengine --global --production
 ```
 
 ## Usage

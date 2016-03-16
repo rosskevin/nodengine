@@ -7,9 +7,9 @@ require('update-notifier')({pkg: _pkg}).notify()
 require('meow')(_pkg)
 
 var path = require('path')
+var async = require('async')
 var which = require('which')
 var semver = require('semver')
-var eachAsync = require('each-async')
 var spawn = require('child_process').spawn
 var nodeVersions = require('node-versions')
 
@@ -23,12 +23,12 @@ function nodeSwitcher (nodeVersion) {
     nvm: ['use', nodeVersion]
   }
 
-  function swicher (binary) {
-    return spawn(binary, binaries[binary], {stdio: 'inherit'})
+  function switcher (binary) {
+    return spawn(binary, binaries[binary], { stdio: 'inherit' })
   }
 
-  swicher.binaries = Object.keys(binaries)
-  return swicher
+  switcher.binaries = function () { return Object.keys(binaries) }
+  return switcher
 }
 
 var pkg
@@ -44,13 +44,23 @@ if (!nodeVersion) processExit()
 
 var maxNodeVersion = semver.maxSatisfying(nodeVersions, nodeVersion)
 var switcher = nodeSwitcher(maxNodeVersion)
-var binaries = []
 
-eachAsync(switcher.binaries, function (binary, index, next) {
+var binaries = switcher.binaries()
+var switcherBinary = null
+
+function getBinary (next) {
+  var binary = binaries.shift()
   which(binary, function (err) {
-    if (!err) binaries.push(binary)
+    if (!err) switcherBinary = binary
     return next()
   })
-}, function () {
-  if (binaries.length) return switcher(binaries.shift())
+}
+
+function whileCondition () {
+  return switcherBinary != null && binaries.length !== 0
+}
+
+async.doWhilst(getBinary, whileCondition, function () {
+  if (switcherBinary) return switcher(switcherBinary)
+  return processExit()
 })
