@@ -1,9 +1,21 @@
+<a name="1.0.1"></a>
+## 1.0.1 (2016-03-16)
+
+
+* Add demo ([4ada08b](https://github.com/kikobeats/nodengine/commit/4ada08b))
+* Adding meow as dependency ([237289b](https://github.com/kikobeats/nodengine/commit/237289b))
+* lock meow depdendency correctly ([500441d](https://github.com/kikobeats/nodengine/commit/500441d))
+* Merge pull request #2 from schottra/add-meow-dependency ([7705fb7](https://github.com/kikobeats/nodengine/commit/7705fb7))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2016-03-14)
 
 
 * Add nvm command ([5e0886e](https://github.com/kikobeats/nodengine/commit/5e0886e))
 * Add snippet section ([22543d0](https://github.com/kikobeats/nodengine/commit/22543d0))
+* Release 1.0.0 ([cc1c252](https://github.com/kikobeats/nodengine/commit/cc1c252))
 
 
 
