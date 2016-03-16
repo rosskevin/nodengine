@@ -57,7 +57,7 @@ function getBinary (next) {
 }
 
 function whileCondition () {
-  return switcherBinary != null && binaries.length !== 0
+  return switcherBinary == null && binaries.length !== 0
 }
 
 async.doWhilst(getBinary, whileCondition, function () {
