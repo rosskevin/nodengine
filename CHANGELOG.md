@@ -1,3 +1,11 @@
+<a name="1.1.0"></a>
+# 1.1.0 (2016-03-16)
+
+
+* Improve algorithm ([9e217f9](https://github.com/kikobeats/nodengine/commit/9e217f9))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2016-03-16)
 
@@ -6,6 +14,7 @@
 * Adding meow as dependency ([237289b](https://github.com/kikobeats/nodengine/commit/237289b))
 * lock meow depdendency correctly ([500441d](https://github.com/kikobeats/nodengine/commit/500441d))
 * Merge pull request #2 from schottra/add-meow-dependency ([7705fb7](https://github.com/kikobeats/nodengine/commit/7705fb7))
+* Release 1.0.1 ([c397b68](https://github.com/kikobeats/nodengine/commit/c397b68))
 
 
 
