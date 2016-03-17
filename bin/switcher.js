@@ -5,7 +5,7 @@ var spawn = require('child_process').spawn
 function Switcher (version) {
   var binArgs = {
     n: ['n', version],
-    nvm: [process.env.SHELL, '-c', 'source $NVM_DIR/nvm.sh; nvm use ' + version]
+    nvm: [process.env.SHELL, '-c', 'source $NVM_DIR/nvm.sh; nvm install ' + version]
   }
 
   function switcher (bin) {
