@@ -1,9 +1,19 @@
+<a name="1.3.0"></a>
+# 1.3.0 (2016-03-17)
+
+
+* Merge pull request #3 from schottra/auto-install-nvm ([2ebe2a5](https://github.com/kikobeats/nodengine/commit/2ebe2a5))
+* Use install for nvm to get auto-install behavior ([730b030](https://github.com/kikobeats/nodengine/commit/730b030))
+
+
+
 <a name="1.2.0"></a>
 # 1.2.0 (2016-03-17)
 
 
 * Improve NVM detection ([10d6b0e](https://github.com/kikobeats/nodengine/commit/10d6b0e))
 * Merge branch 'refactor2' ([e792010](https://github.com/kikobeats/nodengine/commit/e792010))
+* Release 1.2.0 ([540c5de](https://github.com/kikobeats/nodengine/commit/540c5de))
 
 
 
