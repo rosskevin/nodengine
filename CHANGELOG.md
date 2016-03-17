@@ -1,8 +1,18 @@
+<a name="1.2.0"></a>
+# 1.2.0 (2016-03-17)
+
+
+* Improve NVM detection ([10d6b0e](https://github.com/kikobeats/nodengine/commit/10d6b0e))
+* Merge branch 'refactor2' ([e792010](https://github.com/kikobeats/nodengine/commit/e792010))
+
+
+
 <a name="1.1.1"></a>
 ## 1.1.1 (2016-03-16)
 
 
 * Fix condition ([d95de09](https://github.com/kikobeats/nodengine/commit/d95de09))
+* Release 1.1.1 ([97ffe99](https://github.com/kikobeats/nodengine/commit/97ffe99))
 
 
 
