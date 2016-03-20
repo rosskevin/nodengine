@@ -31,7 +31,7 @@ Just run `nodengine` to change to current package.json version. Just it!
 For automatic switching, add this snippet into `.extra`:
 
 ```bash
-echo "chpwd () { nodengine }" >> ~/.extra
+echo "\nchpwd () {\n nodengine\n}" >> ~/.extra
 ```
 
 ## License
