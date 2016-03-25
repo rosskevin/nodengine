@@ -27,6 +27,7 @@ $ npm install nodengine --global --production
 ## Usage
 
 Just run `nodengine` to change to current package.json version. Just it!
+It will use the highest version that satisfies the range.
 
 For automatic switching, add this snippet into `.extra`:
 
