@@ -33,7 +33,7 @@ var switcher = Switcher(maxNodeVersion)
 var switcherBin = null
 
 function getBin (next) {
-  var bin = switcher.binaries.shift()
+  var bin = switcher.binaries.pop()
   which(bin, function (err) {
     if (!err) switcherBin = bin
     return next()

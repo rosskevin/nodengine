@@ -3,18 +3,24 @@
 var spawn = require('child_process').spawn
 
 function Switcher (version) {
-  var binArgs = {
-    n: ['n', version],
-    nvm: [process.env.SHELL, '-c', 'source $NVM_DIR/nvm.sh; nvm install ' + version]
+  var binaries = {
+    nvm: {
+      cmd: process.env.SHELL,
+      args: ['-c', 'source $NVM_DIR/nvm.sh; nvm install ' + version]
+    },
+
+    n: {
+      cmd: 'n',
+      args: [version]
+    }
   }
 
   function switcher (bin) {
-    var args = binArgs[bin]
-    bin = args.shift()
-    return spawn(bin, args, { stdio: 'inherit' })
+    bin = binaries[bin]
+    return spawn(bin.cmd, bin.args, { stdio: 'inherit' })
   }
 
-  switcher.binaries = Object.keys(binArgs)
+  switcher.binaries = Object.keys(binaries)
   return switcher
 }
 
