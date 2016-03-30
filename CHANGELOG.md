@@ -1,3 +1,13 @@
+<a name="1.3.1"></a>
+## 1.3.1 (2016-03-30)
+
+* Update README.md ([4d5152a](https://github.com/kikobeats/nodengine/commit/4d5152a))
+* Update README.md ([839d7fd](https://github.com/kikobeats/nodengine/commit/839d7fd))
+* Update README.md ([71b08b6](https://github.com/kikobeats/nodengine/commit/71b08b6))
+* use .pop instead of .shift ([84c4440](https://github.com/kikobeats/nodengine/commit/84c4440))
+
+
+
 <a name="1.3.0"></a>
 # 1.3.0 (2016-03-17)
 
