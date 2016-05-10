@@ -14,7 +14,7 @@
 [![NPM Status](http://img.shields.io/npm/dm/nodengine.svg?style=flat-square)](https://www.npmjs.org/package/nodengine)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> NodeJS switcher based on package.json.
+> NodeJS switcher based on node version declared in `package.json`.
 
 It needs a global version manager as [n](https://www.npmjs.com/package/n) or [nvm](https://www.npmjs.com/package/nvm).
 
@@ -26,10 +26,19 @@ $ npm install nodengine --global --production
 
 ## Usage
 
-Just run `nodengine` to change to current package.json version. Just it!  
+The `package.json` on the current path needs to looks like:
+
+```json
+"engines": {
+  "node": ">= 0.10"
+}
+```
+
+Then just run `nodengine` to change the current node version to version declared into `package.json`.
+
 It will use the highest version that satisfies the range.
 
-For automatic switching, add this snippet into `.extra`:
+For automatic switching and avoid type the command manually, just add this snippet into `.extra`:
 
 ```bash
 echo "\nchpwd () {\n nodengine\n}" >> ~/.extra
