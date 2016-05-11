@@ -26,23 +26,25 @@ $ npm install nodengine --global --production
 
 ## Usage
 
-The `package.json` on the current path needs to looks like:
+1. Set the desired version range in the `package.json`
 
-```json
-"engines": {
-  "node": ">= 0.10"
-}
-```
+  ```json
+  "engines": {
+    "node": ">= 0.10"
+  }
+  ```
+  
+  Then just run `nodengine` to change the current node version to version declared into `package.json`.
+  
+  It will use the highest version that satisfies the range.
 
-Then just run `nodengine` to change the current node version to version declared into `package.json`.
+1. Enable automatic switching
 
-It will use the highest version that satisfies the range.
-
-For automatic switching and avoid type the command manually, just add this snippet into `.extra`:
-
-```bash
-echo "\nchpwd () {\n nodengine\n}" >> ~/.extra
-```
+  To avoid running `nodengine` manually, just add this snippet into `.extra`:
+  
+  ```bash
+  echo "\nchpwd () {\n nodengine\n}" >> ~/.extra
+  ```
 
 ## License
 
