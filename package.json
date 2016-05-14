@@ -29,9 +29,10 @@
   ],
   "dependencies": {
     "async": "~1.5.2",
+    "configstore": "~2.0.0",
     "meow": "~3.7.0",
-    "node-versions": "~2.1.6",
     "semver": "~5.1.0",
+    "simple-get": "~2.1.0",
     "update-notifier": "~0.7.0",
     "which": "~1.2.4"
   },
@@ -40,7 +41,7 @@
     "standard": "latest"
   },
   "engines": {
-    "node": ">= 4"
+    "node": ">= 0.10"
   },
   "scripts": {
     "clean": "rm -rf node_modules",
