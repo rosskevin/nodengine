@@ -1,3 +1,15 @@
+<a name="2.0.0"></a>
+# 2.0.0 (2016-05-14)
+
+* add automatic switching instructions for bash ([33a93e8](https://github.com/kikobeats/nodengine/commit/33a93e8))
+* Adjust node version engine ([32f67d9](https://github.com/kikobeats/nodengine/commit/32f67d9))
+* Break usage into steps ([405557b](https://github.com/kikobeats/nodengine/commit/405557b))
+* Extend docs ([dffc375](https://github.com/kikobeats/nodengine/commit/dffc375))
+* Fetch node versions ([e23cbd9](https://github.com/kikobeats/nodengine/commit/e23cbd9))
+* chore(package): update update-notifier to version 0.7.0 ([6fe61e9](https://github.com/kikobeats/nodengine/commit/6fe61e9))
+
+
+
 <a name="1.3.1"></a>
 ## 1.3.1 (2016-03-30)
 
