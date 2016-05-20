@@ -5,8 +5,7 @@ var spawn = require('child_process').spawn
 function Switcher (version) {
   var binaries = {
     nvm: {
-      cmd: process.env.SHELL,
-      args: ['-c', 'source $NVM_DIR/nvm.sh; nvm install ' + version]
+      cmd: version
     },
 
     n: {
@@ -15,9 +14,17 @@ function Switcher (version) {
     }
   }
 
-  function switcher (bin) {
-    bin = binaries[bin]
-    return spawn(bin.cmd, bin.args, { stdio: 'inherit' })
+  function switcher (versionManager) {
+    var bin = binaries[versionManager]
+    if(versionManager === 'nvm'){
+
+      // shoot this to stdout and let the caller run:
+      //  V=`nodengine` && nvm install $V
+      console.log(bin.cmd)
+    }
+    else{
+      return spawn(bin.cmd, bin.args, { stdio: 'inherit' })
+    }
   }
 
   switcher.binaries = Object.keys(binaries)
