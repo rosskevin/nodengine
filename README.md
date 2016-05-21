@@ -43,7 +43,7 @@ Manual switching can be avoided.  Add the following below to your environment de
 ### Zsh
 
 ```bash
-echo "\nchpwd () {\n nodengine\n}" >> ~/.extra
+echo "\nchpwd () {\n nodengine\n}" >> ~/.zshrc
 ```
 ### Bash
 
