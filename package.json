@@ -31,7 +31,7 @@
     "async": "~1.5.2",
     "configstore": "~2.0.0",
     "meow": "~3.7.0",
-    "semver": "~5.1.0",
+    "semver": "~5.2.0",
     "simple-get": "~2.2.0",
     "update-notifier": "~1.0.0",
     "which": "~1.2.4"
