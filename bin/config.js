@@ -23,7 +23,7 @@ var isCacheValid = now - lastFetchCheck < fetchCheckInterval
 var nodeVersions = config.get('nodeVersions')
 var hasVersions = nodeVersions.length
 
-module.exports = function (cb) {
+function loadConfig (cb) {
   if (hasVersions && isCacheValid) return ensureAsync(cb, nodeVersions)
   require('./fetch')(function (err, nodeVersions) {
     if (err) {
@@ -35,3 +35,5 @@ module.exports = function (cb) {
     return cb(nodeVersions)
   })
 }
+
+module.exports = loadConfig
