@@ -28,7 +28,7 @@
     "version"
   ],
   "dependencies": {
-    "async": "~2.0.0",
+    "async": "~2.1.0",
     "configstore": "~2.1.0",
     "meow": "~3.7.0",
     "semver": "~5.3.0",
