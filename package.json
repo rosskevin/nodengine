@@ -32,7 +32,7 @@
     "configstore": "~2.1.0",
     "meow": "~3.7.0",
     "semver": "~5.3.0",
-    "simple-get": "~2.2.0",
+    "simple-get": "~2.3.0",
     "update-notifier": "~1.0.0",
     "which": "~1.2.4"
   },
