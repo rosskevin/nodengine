@@ -1,3 +1,25 @@
+<a name="2.0.1"></a>
+## 2.0.1 (2016-10-17)
+
+* Better semantic name ([930e2fd](https://github.com/kikobeats/nodengine/commit/930e2fd))
+* Little Refactor ([bb12bb4](https://github.com/kikobeats/nodengine/commit/bb12bb4))
+* more universal zsh autoswitching setup ([0cc0657](https://github.com/kikobeats/nodengine/commit/0cc0657))
+* Refactor ([581b75e](https://github.com/kikobeats/nodengine/commit/581b75e))
+* fix(migrate): fix lint errors ([83166dc](https://github.com/kikobeats/nodengine/commit/83166dc))
+* fix(migrate): fix the bad quote ([ece4390](https://github.com/kikobeats/nodengine/commit/ece4390))
+* feat(migrate): pass current version to switcher ([ba5e34b](https://github.com/kikobeats/nodengine/commit/ba5e34b))
+* feat(migrate): use current version to reinstall ([0dc89ac](https://github.com/kikobeats/nodengine/commit/0dc89ac))
+* chore(package): update async to version 2.0.0 ([6d0a44b](https://github.com/kikobeats/nodengine/commit/6d0a44b))
+* chore(package): update async to version 2.1.0 ([2e0a8f6](https://github.com/kikobeats/nodengine/commit/2e0a8f6))
+* chore(package): update configstore to version 2.1.0 ([af8008f](https://github.com/kikobeats/nodengine/commit/af8008f))
+* chore(package): update semver to version 5.2.0 ([e761c74](https://github.com/kikobeats/nodengine/commit/e761c74))
+* chore(package): update semver to version 5.3.0 ([4c8c4ed](https://github.com/kikobeats/nodengine/commit/4c8c4ed))
+* chore(package): update simple-get to version 2.2.0 ([c721351](https://github.com/kikobeats/nodengine/commit/c721351))
+* chore(package): update simple-get to version 2.3.0 ([c9ded19](https://github.com/kikobeats/nodengine/commit/c9ded19))
+* chore(package): update update-notifier to version 1.0.0 ([4f2f5bd](https://github.com/kikobeats/nodengine/commit/4f2f5bd))
+
+
+
 <a name="2.0.0"></a>
 # 2.0.0 (2016-05-14)
 
