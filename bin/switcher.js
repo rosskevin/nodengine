@@ -2,11 +2,14 @@
 
 var spawn = require('child_process').spawn
 
-function Switcher (version) {
+function Switcher (version, currentVersion) {
+  var installCmd = 'nvm install ' + version;
+  installCmd += (currentVersion) ? ' --reinstall-packages-from=" + currentVersion : '';
+  
   var binaries = {
     nvm: {
       cmd: process.env.SHELL,
-      args: ['-c', 'source $NVM_DIR/nvm.sh; nvm install ' + version]
+      args: ['-c', 'source $NVM_DIR/nvm.sh; ' + installCmd]
     },
 
     n: {
