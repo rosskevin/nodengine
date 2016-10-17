@@ -27,8 +27,10 @@ var rangeVersion = pkg.engines && pkg.engines.node
 if (!rangeVersion) processExit()
 
 config(function (versions) {
+  var currentVersion = process.versions.node
+
   var maxSatisfyVersion = semver.maxSatisfying(versions, rangeVersion)
-  var switcher = createSwitcher(maxSatisfyVersion, rangeVersion)
+  var switcher = createSwitcher(maxSatisfyVersion, currentVersion)
   var switcherBin
 
   function getBin (next) {
