@@ -2,7 +2,7 @@
 
 var spawn = require('child_process').spawn
 
-function Switcher (version, currentVersion) {
+function createSwitcher (version, currentVersion) {
   var installCmd = 'nvm install ' + version
   installCmd += (currentVersion) ? ' --reinstall-packages-from=' + currentVersion : ''
 
@@ -27,4 +27,4 @@ function Switcher (version, currentVersion) {
   return switcher
 }
 
-module.exports = Switcher
+module.exports = createSwitcher

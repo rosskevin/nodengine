@@ -10,7 +10,7 @@ var path = require('path')
 var async = require('async')
 var semver = require('semver')
 var which = require('./which')
-var Switcher = require('./switcher')
+var createSwitcher = require('./switcher')
 
 var processExit = require('./util').processExit
 
@@ -28,7 +28,7 @@ if (!nodeVersion) processExit()
 config(function (nodeVersions) {
   var maxNodeVersion = semver.maxSatisfying(nodeVersions, nodeVersion)
 
-  var switcher = Switcher(maxNodeVersion, nodeVersion)
+  var switcher = createSwitcher(maxNodeVersion, nodeVersion)
   var switcherBin = null
 
   function getBin (next) {
