@@ -28,7 +28,6 @@ if (!rangeVersion) processExit()
 
 config(function (versions) {
   var currentVersion = process.versions.node
-
   var maxSatisfyVersion = semver.maxSatisfying(versions, rangeVersion)
   var switcher = createSwitcher(maxSatisfyVersion, currentVersion)
   var switcherBin
