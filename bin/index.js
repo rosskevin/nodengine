@@ -22,14 +22,14 @@ try {
   processExit()
 }
 
-var nodeVersion = pkg.engines && pkg.engines.node
-if (!nodeVersion) processExit()
+var rangeVersion = pkg.engines && pkg.engines.node
 
-config(function (nodeVersions) {
-  var maxNodeVersion = semver.maxSatisfying(nodeVersions, nodeVersion)
+if (!rangeVersion) processExit()
 
-  var switcher = createSwitcher(maxNodeVersion, nodeVersion)
-  var switcherBin = null
+config(function (versions) {
+  var maxSatisfyVersion = semver.maxSatisfying(versions, rangeVersion)
+  var switcher = createSwitcher(maxSatisfyVersion, rangeVersion)
+  var switcherBin
 
   function getBin (next) {
     var bin = switcher.binaries.pop()
@@ -40,7 +40,7 @@ config(function (nodeVersions) {
   }
 
   function whileCondition () {
-    return switcherBin == null && switcher.binaries.length !== 0
+    return !switcherBin && switcher.binaries.length !== 0
   }
 
   async.doWhilst(getBin, whileCondition, function () {
