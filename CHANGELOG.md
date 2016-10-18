@@ -1,3 +1,13 @@
+<a name="2.0.2"></a>
+## 2.0.2 (2016-10-18)
+
+* feat(migrate): don't reinstall if same version ([53d942f](https://github.com/kikobeats/nodengine/commit/53d942f))
+* fix(migrate): remove extra-line ([b4d9c3b](https://github.com/kikobeats/nodengine/commit/b4d9c3b))
+* fix(migrate): rename the `rangeVersion` arg to `currentVersion` ([da47042](https://github.com/kikobeats/nodengine/commit/da47042))
+* fix(migrate): use the right node version (without >=) ([69cfa40](https://github.com/kikobeats/nodengine/commit/69cfa40))
+
+
+
 <a name="2.0.1"></a>
 ## 2.0.1 (2016-10-17)
 
