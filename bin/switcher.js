@@ -6,8 +6,10 @@ function nvmCommand (maxSatisfyVersion, currentVersion) {
   var cmd = ''
   cmd += 'nvm install '
   cmd += maxSatisfyVersion
-  cmd += ' --reinstall-packages-from='
-  cmd += currentVersion
+  if (currentVersion !== maxSatisfyVersion) {
+    cmd += ' --reinstall-packages-from='
+    cmd += currentVersion
+  }
   return cmd
 }
 
