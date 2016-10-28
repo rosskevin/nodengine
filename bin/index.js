@@ -2,26 +2,18 @@
 
 'use strict'
 
-var _pkg = require('../package.json')
-require('meow')(_pkg)
-var config = require('./config')
+require('meow')(require('../package.json'))
 
 var path = require('path')
-var async = require('async')
 var semver = require('semver')
+var doWhilst = require('async').doWhilst
+
 var which = require('./which')
+var config = require('./config')
 var createSwitcher = require('./switcher')
+var processExit = require('./util/process-exit')
 
-var processExit = require('./util').processExit
-
-var pkg
-
-try {
-  pkg = require(path.resolve('package.json'))
-} catch (err) {
-  processExit()
-}
-
+var pkg = require(path.resolve('package.json'))
 var rangeVersion = pkg.engines && pkg.engines.node
 
 if (!rangeVersion) processExit()
@@ -44,7 +36,7 @@ config(function (versions) {
     return !switcherBin && switcher.binaries.length !== 0
   }
 
-  async.doWhilst(getBin, whileCondition, function () {
+  doWhilst(getBin, whileCondition, function () {
     if (switcherBin) return switcher(switcherBin)
   })
 })
