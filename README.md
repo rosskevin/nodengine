@@ -38,29 +38,27 @@ Then just run `nodengine` to change the current node version to version declared
 It will use the highest version that satisfies the range.
 
 ## Automatic switching
-Manual switching can be avoided.  Add the following below to your environment depending on your shell choice.
 
-### Zsh
+Enabling automatic switching consist in a little shell script for check if `package.json` exists and then runs `nodengine`.
 
-```bash
-echo "\nchpwd () {\n nodengine\n}" >> ~/.zshrc
-```
-### Bash
+Add the follow snippet in a file loaded by your shell agent, for example, `.extra`.
 
 ```bash
-# Enable nodengine autoswitching
 cd () { builtin cd "$@" && chpwd; }
 pushd () { builtin pushd "$@" && chpwd; }
 popd () { builtin popd "$@" && chpwd; }
-chpwd () {
-  FILE=$PWD/package.json
 
-  if [ -f $FILE ];
-  then
-     nodengine
+chpwd () {
+  local PKG
+
+  PKG=$PWD/package.json
+  if [ -f "$PKG" ] && [ "$NODENGINE_LAST_DIR" != "$PWD" ]; then
+    nodengine
+    printf "\033[36m%s\033[0m \033[90m%s\033[0m\n" "nodengine" "$(node --version)"
+    NODENGINE_LAST_DIR=$PWD
   fi
 }
-```  
+```
 
 ## License
 
