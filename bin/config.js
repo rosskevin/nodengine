@@ -15,7 +15,7 @@ var config = new Configstore(configName, {
 
 var lastFetchCheck = config.get('lastFetchCheck')
 var now = Date.now()
-var fetchCheckInterval = process.env.NODE_ENGINE_INTERVAL || FIVE_DAYS
+var fetchCheckInterval = process.env.NODENGINE_INTERVAL || FIVE_DAYS
 var isCacheValid = now - lastFetchCheck < fetchCheckInterval
 
 var nodeVersions = config.get('nodeVersions')
