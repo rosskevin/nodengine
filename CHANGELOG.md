@@ -1,3 +1,11 @@
+<a name="3.0.1"></a>
+## 3.0.1 (2016-10-28)
+
+* Add NODENGINE_INTERVAL doc ([4f8a787](https://github.com/kikobeats/nodengine/commit/4f8a787))
+* Normalize env vars ([4401878](https://github.com/kikobeats/nodengine/commit/4401878))
+
+
+
 <a name="3.0.0"></a>
 # 3.0.0 (2016-10-28)
 
