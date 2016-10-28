@@ -60,6 +60,20 @@ chpwd () {
 }
 ```
 
+## Fetching new versions
+
+The program use a local cache for avoid fetching versions of node all the time.
+
+By default, new versions of node will be fetch each 5 days.
+
+You can setup the interval using `NODENGINE_INTERVAL`
+
+For example, if you want to fetch all versions every time that you run the program:
+
+```bash
+NODENGINE_INTERVAL=0 nodengine
+```
+
 ## License
 
 MIT © [Kiko Beats](http://kikobeats.com)
