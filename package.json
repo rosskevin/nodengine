@@ -2,7 +2,7 @@
   "name": "nodengine",
   "description": "NodeJS switcher based on package.json.",
   "homepage": "https://github.com/Kikobeats/nodengine",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "bin": {
     "nodengine": "bin/index.js"
   },

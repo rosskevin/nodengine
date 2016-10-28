@@ -1,3 +1,12 @@
+<a name="3.0.0"></a>
+# 3.0.0 (2016-10-28)
+
+* Add better shell script ([6bf8a8c](https://github.com/kikobeats/nodengine/commit/6bf8a8c))
+* Remove unnecessary code ([a324ff5](https://github.com/kikobeats/nodengine/commit/a324ff5))
+* Split util into individual files ([c28d1d8](https://github.com/kikobeats/nodengine/commit/c28d1d8))
+
+
+
 <a name="2.0.2"></a>
 ## 2.0.2 (2016-10-18)
 
