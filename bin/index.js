@@ -4,6 +4,7 @@
 
 require('meow')(require('../package.json'))
 
+var waterfall = require('async').waterfall
 var semver = require('semver')
 var path = require('path')
 
@@ -15,15 +16,22 @@ var rangeVersion = pkg.engines && pkg.engines.node
 
 if (!rangeVersion) process.exit()
 
-config(function (err, versions) {
+var tasks = [
+  function loadConfig (next) {
+    return config(next)
+  },
+  function getSwitcher (versions, next) {
+    var currentVersion = process.versions.node
+    var maxSatisfyVersion = semver.maxSatisfying(versions, rangeVersion)
+    var switcher = createSwitcher(maxSatisfyVersion, currentVersion)
+
+    switcher.getBin(function (err, bin) {
+      return next(err, switcher, bin)
+    })
+  }
+]
+
+waterfall(tasks, function (err, switcher, bin) {
   if (err) throw err
-
-  var currentVersion = process.versions.node
-  var maxSatisfyVersion = semver.maxSatisfying(versions, rangeVersion)
-  var switcher = createSwitcher(maxSatisfyVersion, currentVersion)
-
-  switcher.getBin(function (err, bin) {
-    if (err) throw err
-    if (bin) return switcher.spawn(bin)
-  })
+  if (bin) return switcher.spawn(bin)
 })
