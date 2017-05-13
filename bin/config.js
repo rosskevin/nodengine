@@ -5,7 +5,6 @@ var pkg = require('../package.json')
 
 require('update-notifier')({pkg: pkg}).notify()
 
-var ensureAsync = require('./util/ensure-async')
 var Configstore = require('configstore')
 var configName = 'update-notifier-' + pkg.name
 
@@ -22,10 +21,10 @@ var nodeVersions = config.get('nodeVersions')
 var hasVersions = nodeVersions.length
 
 function loadConfig (cb) {
-  if (hasVersions && isCacheValid) return ensureAsync(cb, nodeVersions)
+  if (hasVersions && isCacheValid) return cb(nodeVersions)
   require('./fetch')(function (err, nodeVersions) {
     if (err) {
-      if (hasVersions) return ensureAsync(cb, nodeVersions)
+      if (hasVersions) return cb(nodeVersions)
       throw err
     }
     config.set('nodeVersions', nodeVersions)
