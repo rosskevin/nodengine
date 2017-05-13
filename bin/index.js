@@ -4,11 +4,9 @@
 
 require('meow')(require('../package.json'))
 
-var path = require('path')
 var semver = require('semver')
-var doWhilst = require('async').doWhilst
+var path = require('path')
 
-var which = require('./which')
 var config = require('./config')
 var createSwitcher = require('./switcher')
 
@@ -17,25 +15,15 @@ var rangeVersion = pkg.engines && pkg.engines.node
 
 if (!rangeVersion) process.exit()
 
-config(function (versions) {
+config(function (err, versions) {
+  if (err) throw err
+
   var currentVersion = process.versions.node
   var maxSatisfyVersion = semver.maxSatisfying(versions, rangeVersion)
   var switcher = createSwitcher(maxSatisfyVersion, currentVersion)
-  var switcherBin
 
-  function getBin (next) {
-    var bin = switcher.binaries.pop()
-    which(bin, function (err) {
-      if (!err) switcherBin = bin
-      return next()
-    })
-  }
-
-  function whileCondition () {
-    return !switcherBin && switcher.binaries.length !== 0
-  }
-
-  doWhilst(getBin, whileCondition, function () {
-    if (switcherBin) return switcher(switcherBin)
+  switcher.getBin(function (err, bin) {
+    if (err) throw err
+    if (bin) return switcher.spawn(bin)
   })
 })

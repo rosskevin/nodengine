@@ -1,6 +1,8 @@
 'use strict'
 
 var spawn = require('child_process').spawn
+var doWhilst = require('async').doWhilst
+var which = require('./which')
 
 function nvmCommand (maxSatisfyVersion, currentVersion) {
   var cmd = ''
@@ -26,13 +28,33 @@ function createSwitcher (maxSatisfyVersion, currentVersion) {
     }
   }
 
-  function switcher (bin) {
-    bin = binaries[bin]
-    return spawn(bin.cmd, bin.args, { stdio: 'inherit' })
-  }
+  return {
+    getBin: function (cb) {
+      var binariesNames = Object.keys(binaries)
+      var bin
 
-  switcher.binaries = Object.keys(binaries)
-  return switcher
+      function getBin (next) {
+        var binName = binariesNames.pop()
+        which(binName, function (err) {
+          if (!err) bin = binName
+          return next()
+        })
+      }
+
+      function whileCondition () {
+        return !bin && binariesNames.length !== 0
+      }
+
+      doWhilst(getBin, whileCondition, function (err) {
+        return cb(err, bin)
+      })
+    },
+
+    spawn: function (bin) {
+      bin = binaries[bin]
+      return spawn(bin.cmd, bin.args, { stdio: 'inherit' })
+    }
+  }
 }
 
 module.exports = createSwitcher
