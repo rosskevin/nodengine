@@ -8,26 +8,37 @@ require('update-notifier')({pkg: pkg}).notify()
 var Configstore = require('configstore')
 var configName = 'update-notifier-' + pkg.name
 var config = new Configstore(configName, { nodeVersions: [] })
-
-var lastFetchCheck = config.get('lastFetchCheck')
-var now = Date.now()
 var fetchCheckInterval = process.env.NODENGINE_INTERVAL || FIVE_DAYS
-var isCacheValid = now - lastFetchCheck < fetchCheckInterval
 
-var nodeVersions = config.get('nodeVersions')
-var hasVersions = nodeVersions.length
-
+var waterfall = require('async').waterfall
 var fetch = require('./fetch')
 
 function loadConfig (cb) {
-  if (hasVersions && isCacheValid) return cb(null, nodeVersions)
+  var tasks = [
+    function checkCache (next) {
+      var currentNodeVersions = config.get('nodeVersions')
+      var lastFetchCheck = config.get('lastFetchCheck')
+      var hasVersions = currentNodeVersions.length
+      var now = Date.now()
+      var isCacheValid = now - lastFetchCheck < fetchCheckInterval
 
-  fetch(function (err, nodeVersions) {
-    if (err) return cb(hasVersions ? null : err, nodeVersions)
-    config.set('nodeVersions', nodeVersions)
-    config.set('lastFetchCheck', Date.now())
-    return cb(null, nodeVersions)
-  })
+      if (hasVersions && isCacheValid) return next(null, currentNodeVersions)
+
+      fetch(function (err, nodeVersions) {
+        if (err) {
+          // no internet!
+          if (err.code === 'ENOTFOUND') return next(null, currentNodeVersions)
+          return next(err)
+        }
+
+        config.set('nodeVersions', nodeVersions)
+        config.set('lastFetchCheck', now)
+        return next(null, nodeVersions)
+      })
+    }
+  ]
+
+  return waterfall(tasks, cb)
 }
 
 module.exports = loadConfig
