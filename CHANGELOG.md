@@ -1,3 +1,17 @@
+<a name="3.1.0"></a>
+# 3.1.0 (2017-05-13)
+
+* Add offline support ([4fa56ae](https://github.com/kikobeats/nodengine/commit/4fa56ae))
+* Always return an error in a cb ([b03ee10](https://github.com/kikobeats/nodengine/commit/b03ee10))
+* Better error handling ([78116ab](https://github.com/kikobeats/nodengine/commit/78116ab))
+* Refactor switcher ([5400336](https://github.com/kikobeats/nodengine/commit/5400336))
+* remove ensure async ([d934b3d](https://github.com/kikobeats/nodengine/commit/d934b3d))
+* remove process-exit ([b0f1afd](https://github.com/kikobeats/nodengine/commit/b0f1afd))
+* Remove process.nexttick ([7eb4e19](https://github.com/kikobeats/nodengine/commit/7eb4e19))
+* Update deps ([edcb169](https://github.com/kikobeats/nodengine/commit/edcb169))
+
+
+
 <a name="3.0.1"></a>
 ## 3.0.1 (2016-10-28)
 
