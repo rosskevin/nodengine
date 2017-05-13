@@ -11,12 +11,11 @@ var doWhilst = require('async').doWhilst
 var which = require('./which')
 var config = require('./config')
 var createSwitcher = require('./switcher')
-var processExit = require('./util/process-exit')
 
 var pkg = require(path.resolve('package.json'))
 var rangeVersion = pkg.engines && pkg.engines.node
 
-if (!rangeVersion) processExit()
+if (!rangeVersion) process.exit()
 
 config(function (versions) {
   var currentVersion = process.versions.node
