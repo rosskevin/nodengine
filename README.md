@@ -50,7 +50,6 @@ popd () { builtin popd "$@" && chpwd; }
 
 chpwd () {
   local PKG
-
   PKG=$PWD/package.json
   if [ -f "$PKG" ] && [ "$NODENGINE_LAST_DIR" != "$PWD" ]; then
     nodengine
@@ -64,7 +63,7 @@ chpwd () {
 
 The program use a local cache for avoid fetching versions of node all the time.
 
-By default, new versions of node will be fetch each 5 days.
+By default, new versions of node will be fetched after 5 days.
 
 You can setup the interval using `NODENGINE_INTERVAL`
 

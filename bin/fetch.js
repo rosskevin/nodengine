@@ -1,7 +1,7 @@
 'use strict'
 
-var URL = 'https://semver.io/node/versions'
 var get = require('simple-get')
+var URL = 'https://semver.io/node/versions'
 
 function fetch (cb) {
   get.concat(URL, function (err, res, data) {

@@ -2,36 +2,16 @@
 
 'use strict'
 
-require('meow')(require('../package.json'))
-
-var waterfall = require('async').waterfall
-var semver = require('semver')
 var path = require('path')
+var fs = require('fs')
 
-var config = require('./config')
-var createSwitcher = require('./switcher')
-
-var pkg = require(path.resolve('package.json'))
-var rangeVersion = pkg.engines && pkg.engines.node
-
-if (!rangeVersion) process.exit()
-
-var tasks = [
-  function loadConfig (next) {
-    return config(next)
-  },
-  function getSwitcher (versions, next) {
-    var currentVersion = process.versions.node
-    var maxSatisfyVersion = semver.maxSatisfying(versions, rangeVersion)
-    var switcher = createSwitcher(maxSatisfyVersion, currentVersion)
-
-    switcher.getBin(function (err, bin) {
-      return next(err, switcher, bin)
-    })
-  }
-]
-
-waterfall(tasks, function (err, switcher, bin) {
-  if (err) throw err
-  if (bin) return switcher.spawn(bin)
+require('meow')({
+  pkg: require(path.resolve(__dirname, '../package.json')),
+  help: fs.readFileSync(path.resolve(__dirname, './help.txt'), 'utf8')
 })
+
+var pkgPath = path.resolve('package.json')
+var pkg = fs.existsSync(pkgPath) ? require(pkgPath) : {}
+var nodeVersion = pkg.engines && pkg.engines.node
+
+!nodeVersion ? process.exit() : require('./switch')(nodeVersion)
