@@ -1,3 +1,10 @@
+<a name="3.2.0"></a>
+# 3.2.0 (2017-05-14)
+
+* Improve non detection & docs ([4ef3d99](https://github.com/kikobeats/nodengine/commit/4ef3d99))
+
+
+
 <a name="3.1.0"></a>
 # 3.1.0 (2017-05-13)
 
