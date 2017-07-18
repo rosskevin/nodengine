@@ -1,3 +1,12 @@
+<a name="3.2.1"></a>
+## 3.2.1 (2017-07-18)
+
+* Update README.md ([06a0e1c](https://github.com/kikobeats/nodengine/commit/06a0e1c))
+* docs(readme): add Greenkeeper badge ([26e87a2](https://github.com/kikobeats/nodengine/commit/26e87a2))
+* chore(package): update dependencies ([69d0d40](https://github.com/kikobeats/nodengine/commit/69d0d40))
+
+
+
 <a name="3.2.0"></a>
 # 3.2.0 (2017-05-14)
 
