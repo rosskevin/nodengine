@@ -1,3 +1,12 @@
+<a name="3.2.2"></a>
+## 3.2.2 (2017-08-16)
+
+* Update deps ([9b08f46](https://github.com/kikobeats/nodengine/commit/9b08f46))
+* fix(package): update semver to version 5.4.0 ([4327824](https://github.com/kikobeats/nodengine/commit/4327824))
+* fix(package): update which to version 1.3.0 ([ff50ff5](https://github.com/kikobeats/nodengine/commit/ff50ff5))
+
+
+
 <a name="3.2.1"></a>
 ## 3.2.1 (2017-07-18)
 
